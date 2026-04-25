@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://be88eoq182wym"]
+
+[ext_resource type="Script" uid="uid://bsow06sypyrml" path="res://Pacman.cs" id="1_7gqq7"]
+[ext_resource type="Script" uid="uid://bw0bjvjbw01pr" path="res://Scenes/Ghost.cs" id="2_dol8g"]
+
+[node name="Node2D" type="Node2D" unique_id=810122823]
+
+[node name="Pacman" type="Area2D" parent="." unique_id=794554452]
+position = Vector2(300, 300)
+script = ExtResource("1_7gqq7")
+_speed = 250.0
+
+[node name="Polygon2D" type="Polygon2D" parent="Pacman" unique_id=789579417]
+color = Color(0.9999998, 0.8190695, 0.18510321, 1)
+polygon = PackedVector2Array(1, 0, 71, -38, 31, -63, -25, -54, -57, 0, -24, 44, 34, 54, 74, 46)
+uv = PackedVector2Array(282.5, -13, 362.5, 0, 357.5, -38, 259.5, -64, 218.5, -12, 257.5, 17, 313.5, 26, 334.5, 17)
+polygons = [PackedInt32Array(0, 2, 1), PackedInt32Array(2, 3, 0), PackedInt32Array(3, 4, 0), PackedInt32Array(0, 4, 5), PackedInt32Array(7, 0, 6), PackedInt32Array(5, 0, 6)]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pacman" unique_id=59536426]
+polygon = PackedVector2Array(72, -39, 32, -64, -27, -53, -56, 0, -24, 44, 34, 54, 73, 44, 82, 0)
+
+[node name="Ghost" type="Area2D" parent="." unique_id=1446462898 node_paths=PackedStringArray("_target")]
+position = Vector2(1000, 600)
+script = ExtResource("2_dol8g")
+_speed = 200.0
+_target = NodePath("../Pacman")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ghost" unique_id=1830545170]
+color = Color(0.8477446, 0.32971755, 0.770962, 1)
+polygon = PackedVector2Array(-52, 46, -45, -28, -20, -80, 11, -92, 39, -88, 64, -28, 66, 25, 54, 51, 43, 27, 30, 47, 18, 27, 3, 46, -5, 28, -22, 48, -30, 27, -41, 45)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ghost" unique_id=584577749]
+polygon = PackedVector2Array(64, -30, 39, -89, 14, -91, -20, -81, -44, -29, -53, 45, 64, 48)

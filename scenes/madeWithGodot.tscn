@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://cgif2bppjjgy1"]
+
+[ext_resource type="FontFile" uid="uid://b34h5t0mbr0wu" path="res://assets/Miracode.ttf" id="2_4j7kh"]
+[ext_resource type="Texture2D" uid="uid://cqkctl8eeru51" path="res://assets/dulkirlogo.png" id="2_rdl8v"]
+
+[sub_resource type="Gradient" id="Gradient_t8hqr"]
+offsets = PackedFloat32Array(0, 0.9651347)
+colors = PackedColorArray(0, 0, 0, 1, 0.15494852, 0.15494852, 0.15494852, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4j7kh"]
+gradient = SubResource("Gradient_t8hqr")
+width = 640
+height = 320
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[node name="DulkirGamesPresents" type="Control" unique_id=726422837]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1166455073]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_4j7kh")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Control" type="Control" parent="." unique_id=722726876]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dulkirlogo" type="TextureRect" parent="Control" unique_id=1707957553]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -166.5
+offset_top = -333.0
+offset_right = 166.5
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_rdl8v")
+expand_mode = 1
+
+[node name="MadeWithGodotText" type="RichTextLabel" parent="Control" unique_id=1816218397]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("2_4j7kh")
+theme_override_font_sizes/normal_font_size = 48
+text = "Dulkir Games Presents"
+horizontal_alignment = 1
+vertical_alignment = 1

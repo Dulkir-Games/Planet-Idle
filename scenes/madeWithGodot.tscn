@@ -48,7 +48,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Dulkirlogo" type="TextureRect" parent="Control" unique_id=1707957553]
+[node name="DulkirLogo" type="TextureRect" parent="Control" unique_id=1707957553]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -63,7 +63,7 @@ grow_vertical = 0
 texture = ExtResource("2_rdl8v")
 expand_mode = 1
 
-[node name="MadeWithGodotText" type="RichTextLabel" parent="Control" unique_id=1816218397]
+[node name="PresentsText" type="RichTextLabel" parent="Control" unique_id=1816218397]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

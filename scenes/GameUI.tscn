@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://5joqk5g0h5cx"]
+
+[ext_resource type="Script" uid="uid://bxhk57gng1l8s" path="res://scripts/GameUI.cs" id="1_jkspe"]
+
+[node name="GameUI" type="Control" unique_id=2075242356]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jkspe")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=62914232]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="Control" parent="HBoxContainer" unique_id=1082825811]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Left" unique_id=1885480616]
+custom_minimum_size = Vector2(384, 640)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="Center" type="Control" parent="HBoxContainer" unique_id=881786109]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Right" type="Control" parent="HBoxContainer" unique_id=1490197806]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel2" type="Panel" parent="HBoxContainer/Right" unique_id=27854832]
+custom_minimum_size = Vector2(384, 384)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_right = 192.0
+offset_bottom = 384.0
+grow_horizontal = 2
+
+[node name="Panel3" type="Panel" parent="HBoxContainer/Right" unique_id=1181002638]
+custom_minimum_size = Vector2(384, 384)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -384.0
+offset_right = 192.0
+grow_horizontal = 2
+grow_vertical = 0

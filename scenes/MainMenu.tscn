@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://di6jysadd0wiy"]
 
+[ext_resource type="Script" uid="uid://ccs3wrpesdbwe" path="res://scripts/MainMenu.cs" id="1_yqorp"]
+[ext_resource type="Theme" uid="uid://6s7ipeswg4gd" path="res://themes/MainTheme.tres" id="2_0ykhv"]
+
 [sub_resource type="Gradient" id="Gradient_t8hqr"]
 offsets = PackedFloat32Array(0, 0.9651347)
 colors = PackedColorArray(0, 0, 0, 1, 0.15494852, 0.15494852, 0.15494852, 1)
@@ -12,57 +15,17 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 metadata/_snap_enabled = true
 
-[sub_resource type="FontVariation" id="FontVariation_ukcvp"]
-variation_embolden = 0.5
+[sub_resource type="LabelSettings" id="LabelSettings_ukcvp"]
+font_size = 48
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukcvp"]
-bg_color = Color(0.45882353, 0.06666667, 0.047058824, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqorp"]
-bg_color = Color(0, 0.3529412, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ykhv"]
-bg_color = Color(0, 0.3529412, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wh52"]
-bg_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ow34m"]
-bg_color = Color(0.7058824, 1, 0.7058824, 1)
-
-[sub_resource type="Theme" id="Theme_ukcvp"]
-Button/colors/font_color = Color(1, 1, 1, 1)
-Button/colors/font_disabled_color = Color(1, 1, 1, 1)
-Button/colors/font_focus_color = Color(1, 1, 1, 1)
-Button/colors/font_hover_color = Color(1, 1, 1, 1)
-Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-Button/colors/font_outline_color = Color(1, 1, 1, 1)
-Button/colors/font_pressed_color = Color(0, 0, 0, 1)
-Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
-Button/colors/icon_focus_color = Color(0, 0, 0, 1)
-Button/colors/icon_hover_color = Color(0, 0, 0, 1)
-Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-Button/colors/icon_normal_color = Color(0, 0, 0, 1)
-Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
-Button/constants/align_to_largest_stylebox = 0
-Button/constants/h_separation = 0
-Button/constants/icon_max_width = 0
-Button/constants/outline_size = 0
-Button/font_sizes/font_size = 25
-Button/fonts/font = SubResource("FontVariation_ukcvp")
-Button/styles/disabled = SubResource("StyleBoxFlat_ukcvp")
-Button/styles/focus = SubResource("StyleBoxFlat_yqorp")
-Button/styles/hover = SubResource("StyleBoxFlat_0ykhv")
-Button/styles/normal = SubResource("StyleBoxFlat_2wh52")
-Button/styles/pressed = SubResource("StyleBoxFlat_ow34m")
-
-[node name="Control" type="Control" unique_id=1770861018]
+[node name="MainMenu" type="Control" unique_id=1770861018]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yqorp")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=630212835]
 layout_mode = 1
@@ -91,8 +54,21 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="TextureRect/VBoxContainer" unique_id=218652326]
+[node name="TitleLabel" type="Label" parent="TextureRect/VBoxContainer" unique_id=403630467]
+layout_mode = 2
+text = "Planet Idle"
+label_settings = SubResource("LabelSettings_ukcvp")
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="TextureRect/VBoxContainer" unique_id=594397940]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="TextureRect/VBoxContainer" unique_id=218652326]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme = SubResource("Theme_ukcvp")
+size_flags_horizontal = 4
+theme = ExtResource("2_0ykhv")
 text = "Play Game"
+
+[connection signal="pressed" from="TextureRect/VBoxContainer/PlayButton" to="." method="OnPlayButtonPressed"]

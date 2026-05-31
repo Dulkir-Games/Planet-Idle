@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://boxjyybrrtm03"]
+
+[ext_resource type="Script" uid="uid://bdx38yi8n4qn0" path="res://scripts/PauseMenu.cs" id="1_jkspe"]
+[ext_resource type="Theme" uid="uid://6s7ipeswg4gd" path="res://themes/MainTheme.tres" id="2_1twlr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1twlr"]
+font_size = 48
+
+[node name="PauseMenu" type="Control" unique_id=877086311 node_paths=PackedStringArray("_pauseMenu")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jkspe")
+_pauseMenu = NodePath("PauseMenuPanel")
+
+[node name="PauseMenuPanel" type="Panel" parent="." unique_id=1401421496]
+visible = false
+custom_minimum_size = Vector2(384, 512)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuPanel" unique_id=1655196556]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_1twlr")
+
+[node name="Label" type="Label" parent="PauseMenuPanel/VBoxContainer" unique_id=1552507278]
+layout_mode = 2
+text = "Paused"
+label_settings = SubResource("LabelSettings_1twlr")
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="PauseMenuPanel/VBoxContainer" unique_id=591266621]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="PauseMenuPanel/VBoxContainer" unique_id=568283989]
+layout_mode = 2
+theme = ExtResource("2_1twlr")
+text = "Resume"
+
+[node name="MainMenuButton" type="Button" parent="PauseMenuPanel/VBoxContainer" unique_id=1532477113]
+layout_mode = 2
+theme = ExtResource("2_1twlr")
+text = "Main Menu"
+
+[connection signal="pressed" from="PauseMenuPanel/VBoxContainer/ResumeButton" to="." method="OnResumeButtonPressed"]
+[connection signal="pressed" from="PauseMenuPanel/VBoxContainer/MainMenuButton" to="." method="OnMainMenuButtonPressed"]

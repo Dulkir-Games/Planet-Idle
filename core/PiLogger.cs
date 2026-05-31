@@ -2,7 +2,7 @@ using Godot;
 
 namespace PlanetIdle.core;
 
-public class PiLogger {
+public static class PiLogger {
 
     public static void Debug(string foo) {
         GD.Print($"[DEBUG] {foo}");

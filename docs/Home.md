@@ -12,4 +12,3 @@ Home for design and implementation documentation.
 | [Core Loop](design/core-loop.md)      | Gameplay loop, resources, upgrades, prestige, and v0.1 scope.          |
 | [Upgrades](design/upgrades.md)        | Accretion tiers, gravity, and planned v0.2 systems.                    |
 
-

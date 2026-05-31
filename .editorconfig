@@ -1,4 +1,93 @@
 root = true
 
+# Shared file settings (also used by dotnet format whitespace checks)
 [*]
 charset = utf-8
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+
+# -----------------------------------------------------------------------------
+# CI: Roslyn / dotnet format (.github/workflows/code-style.yml)
+# Rider reads these too when EditorConfig support is enabled.
+# -----------------------------------------------------------------------------
+[*.cs]
+
+# Braces — mirrors resharper_braces_for_* below
+csharp_prefer_braces = true:warning
+
+# Layout
+csharp_new_line_before_members_in_object_initializers = false
+csharp_new_line_before_open_brace = none
+
+# Modifiers and types
+csharp_preferred_modifier_order = public, private, protected, internal, file, new, static, abstract, virtual, sealed, readonly, override, extern, unsafe, volatile, async, required:suggestion
+csharp_style_prefer_utf8_string_literals = true:suggestion
+
+# var — aligned with resharper_for_built_in_types = use_var_when_evident
+csharp_style_var_elsewhere = false:none
+csharp_style_var_for_built_in_types = false:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+
+# Naming
+dotnet_naming_rule.unity_serialized_field_rule.severity = warning
+dotnet_naming_rule.unity_serialized_field_rule.style = lower_camel_case_style
+dotnet_naming_rule.unity_serialized_field_rule.symbols = unity_serialized_field_symbols
+dotnet_naming_style.lower_camel_case_style.capitalization = camel_case
+dotnet_naming_symbols.unity_serialized_field_symbols.applicable_accessibilities = *
+dotnet_naming_symbols.unity_serialized_field_symbols.applicable_kinds =
+
+# Syntax style
+dotnet_style_parentheses_in_arithmetic_binary_operators = never_if_unnecessary:none
+dotnet_style_parentheses_in_other_binary_operators = always_for_clarity:none
+dotnet_style_parentheses_in_relational_binary_operators = never_if_unnecessary:none
+dotnet_style_predefined_type_for_locals_parameters_members = true:suggestion
+dotnet_style_predefined_type_for_member_access = true:suggestion
+dotnet_style_qualification_for_event = true:suggestion
+dotnet_style_qualification_for_field = true:suggestion
+dotnet_style_qualification_for_method = true:suggestion
+dotnet_style_qualification_for_property = true:suggestion
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:suggestion
+
+# -----------------------------------------------------------------------------
+# Rider only — not enforced by dotnet format in CI
+# (blank lines, trailing commas, empty-block layout, IDE tooling)
+# -----------------------------------------------------------------------------
+resharper_autodetect_indent_settings = true
+resharper_blank_lines_around_single_line_auto_property = 1
+resharper_blank_lines_around_single_line_local_method = 1
+resharper_blank_lines_around_single_line_property = 1
+resharper_blank_lines_before_single_line_comment = 1
+resharper_blank_lines_inside_namespace = 1
+resharper_blank_lines_inside_type = 1
+resharper_braces_for_for = required
+resharper_braces_for_foreach = required
+resharper_braces_for_ifelse = required
+resharper_braces_for_while = required
+resharper_csharp_blank_lines_around_single_line_invocable = 1
+resharper_csharp_empty_block_style = together_same_line
+resharper_csharp_keep_blank_lines_in_code = 1
+resharper_csharp_keep_blank_lines_in_declarations = 1
+resharper_csharp_remove_blank_lines_near_braces_in_declarations = false
+resharper_formatter_tags_enabled = true
+resharper_for_built_in_types = use_var_when_evident
+resharper_trailing_comma_in_multiline_lists = true
+resharper_use_indent_from_vs = false
+
+# Inspection severities (Rider only; redundant with csharp_prefer_braces for braces)
+resharper_arrange_redundant_parentheses_highlighting = hint
+resharper_arrange_this_qualifier_highlighting = hint
+resharper_arrange_type_member_modifiers_highlighting = hint
+resharper_arrange_type_modifiers_highlighting = hint
+resharper_built_in_type_reference_style_for_member_access_highlighting = hint
+resharper_built_in_type_reference_style_highlighting = hint
+resharper_enforce_do_while_statement_braces_highlighting = suggestion
+resharper_enforce_fixed_statement_braces_highlighting = suggestion
+resharper_enforce_foreach_statement_braces_highlighting = suggestion
+resharper_enforce_for_statement_braces_highlighting = suggestion
+resharper_enforce_if_statement_braces_highlighting = suggestion
+resharper_enforce_lock_statement_braces_highlighting = suggestion
+resharper_enforce_using_statement_braces_highlighting = suggestion
+resharper_enforce_while_statement_braces_highlighting = suggestion

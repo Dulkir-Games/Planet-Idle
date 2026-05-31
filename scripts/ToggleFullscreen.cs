@@ -13,7 +13,7 @@ public partial class ToggleFullscreen : Node {
             return;
         }
 
-        DisplayServerInstance dsi = DisplayServer.Singleton;
+        DisplayServerInstance dsi = Singleton;
         WindowMode cur = dsi.WindowGetMode();
         WindowMode next = this.Next(cur);
         PiLogger.Debug($"Switching window mode: {Enum.GetName(cur)} -> {Enum.GetName(next)}");

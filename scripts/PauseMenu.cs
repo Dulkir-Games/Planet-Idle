@@ -1,7 +1,7 @@
-namespace PlanetIdle.scripts;
-
-using core;
 using Godot;
+using PlanetIdle.core;
+
+namespace PlanetIdle.scripts;
 
 public partial class PauseMenu : Control {
 

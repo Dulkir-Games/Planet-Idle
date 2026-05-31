@@ -1,6 +1,6 @@
-namespace PlanetIdle.scripts;
-
 using Godot;
+
+namespace PlanetIdle.scripts;
 
 public partial class MainMenu : Control {
 

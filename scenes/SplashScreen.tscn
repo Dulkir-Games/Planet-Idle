@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://cgif2bppjjgy1"]
 
-[ext_resource type="FontFile" uid="uid://b34h5t0mbr0wu" path="res://assets/Miracode.ttf" id="2_4j7kh"]
-[ext_resource type="Texture2D" uid="uid://cqkctl8eeru51" path="res://assets/dulkirlogo.png" id="2_rdl8v"]
+[ext_resource type="Texture2D" uid="uid://cqkctl8eeru51" path="res://assets/dulkirlogo.png" id="1_l2g8s"]
+[ext_resource type="FontFile" uid="uid://b34h5t0mbr0wu" path="res://assets/Miracode.ttf" id="2_rc2kg"]
 
-[sub_resource type="Gradient" id="Gradient_t8hqr"]
+[sub_resource type="Gradient" id="Gradient_l2g8s"]
 offsets = PackedFloat32Array(0, 0.9651347)
 colors = PackedColorArray(0, 0, 0, 1, 0.15494852, 0.15494852, 0.15494852, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_4j7kh"]
-gradient = SubResource("Gradient_t8hqr")
+gradient = SubResource("Gradient_l2g8s")
 width = 640
 height = 320
 fill = 1
@@ -60,7 +60,7 @@ offset_top = -333.0
 offset_right = 166.5
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_rdl8v")
+texture = ExtResource("1_l2g8s")
 expand_mode = 1
 
 [node name="PresentsText" type="RichTextLabel" parent="Control" unique_id=1816218397]
@@ -72,7 +72,7 @@ offset_left = -250.0
 offset_right = 250.0
 offset_bottom = 200.0
 grow_horizontal = 2
-theme_override_fonts/normal_font = ExtResource("2_4j7kh")
+theme_override_fonts/normal_font = ExtResource("2_rc2kg")
 theme_override_font_sizes/normal_font_size = 48
 text = "Dulkir Games Presents"
 horizontal_alignment = 1

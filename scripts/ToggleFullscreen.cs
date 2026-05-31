@@ -1,6 +1,7 @@
 using System;
 using Godot;
 using PlanetIdle.core;
+using static Godot.DisplayServer;
 
 namespace PlanetIdle.scripts;
 
@@ -11,24 +12,25 @@ public partial class ToggleFullscreen : Node {
         if (!@event.IsAction("Toggle Fullscreen") || !@event.IsPressed()) {
             return;
         }
+
         DisplayServerInstance dsi = DisplayServer.Singleton;
-        DisplayServer.WindowMode cur = dsi.WindowGetMode();
-        DisplayServer.WindowMode next = this.Next(cur);
+        WindowMode cur = dsi.WindowGetMode();
+        WindowMode next = this.Next(cur);
         PiLogger.Debug($"Switching window mode: {Enum.GetName(cur)} -> {Enum.GetName(next)}");
         dsi.WindowSetMode(next);
     }
 
-    private DisplayServer.WindowMode Next(DisplayServer.WindowMode cur) {
+    private WindowMode Next(WindowMode cur) {
         switch (cur) {
-            case DisplayServer.WindowMode.Minimized:
+            case WindowMode.Minimized:
                 PiLogger.Error("Tried to handle Fullscreen Toggle Press on minimized window.");
-                return DisplayServer.WindowMode.Windowed;
-            case DisplayServer.WindowMode.Windowed:
-            case DisplayServer.WindowMode.Maximized:
-                return DisplayServer.WindowMode.Fullscreen;
-            case DisplayServer.WindowMode.Fullscreen:
-            case DisplayServer.WindowMode.ExclusiveFullscreen:
-                return DisplayServer.WindowMode.Windowed;
+                return WindowMode.Windowed;
+            case WindowMode.Windowed:
+            case WindowMode.Maximized:
+                return WindowMode.Fullscreen;
+            case WindowMode.Fullscreen:
+            case WindowMode.ExclusiveFullscreen:
+                return WindowMode.Windowed;
             default:
                 throw new ArgumentOutOfRangeException(nameof(cur), cur, null);
         }

@@ -1,3 +1,13 @@
-# Planet Idle — design docs
+# Planet Idle Wiki
 
-Source of truth for the game design wiki. Edits here are synced to the GitHub wiki on push to `master`.
+Home for design and implementation documentation.
+
+------
+
+### Table of Contents
+
+| Title + LInk                        | Description                                                            |
+|-------------------------------------|------------------------------------------------------------------------|
+| [Design Pillars](design/pillars.md) | High level description of *feel* and *outcomes* we want from the game. |
+
+

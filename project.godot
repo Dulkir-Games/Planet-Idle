@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Planet Idle"
-run/main_scene="res://scenes/madeWithGodot.tscn"
+run/main_scene="uid://di6jysadd0wiy"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
@@ -34,6 +34,10 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="Planet Idle"
+
+[gui]
+
+theme/custom_font="uid://b34h5t0mbr0wu"
 
 [input]
 

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bv5vjsyntkegu" path="res://scenes/game/GameUI.tscn" id="1_ibkli"]
 [ext_resource type="PackedScene" uid="uid://6ec6w5ywn3nd" path="res://scenes/menu/PauseMenu.tscn" id="2_qbsmt"]
+[ext_resource type="Script" uid="uid://dxtktg4smwunl" path="res://scripts/DirectionalLight3D.cs" id="3_vrspl"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_ve7bo"]
 
@@ -11,8 +12,7 @@
 background_mode = 1
 background_color = Color(0.011974272, 0.047805794, 0.13115397, 1)
 ambient_light_source = 2
-ambient_light_color = Color(0.01853339, 0.012924283, 0.07720677, 1)
-ambient_light_energy = 0.74
+ambient_light_color = Color(0.1882353, 0.17254902, 0.17254902, 1)
 
 [node name="Root" type="Node3D" unique_id=1912940552]
 
@@ -31,4 +31,5 @@ environment = SubResource("Environment_qbsmt")
 [node name="PauseMenu" parent="Camera3D/CanvasLayer" unique_id=877086311 instance=ExtResource("2_qbsmt")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1896585933]
-transform = Transform3D(0.86277854, -0.3819784, 0.3312187, 0, 0.6551234, 0.75552183, -0.50558215, -0.6518481, 0.5652264, 5.135818, 0, 0)
+transform = Transform3D(0.4368018, -0.07683746, 0.89627016, 0, 0.9963453, 0.08541692, -0.89955777, -0.037310265, 0.4352054, 10, 0, 0)
+script = ExtResource("3_vrspl")

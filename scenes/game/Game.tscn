@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://r2yxm1owma31"]
 
-[ext_resource type="PackedScene" uid="uid://5joqk5g0h5cx" path="res://scenes/GameUI.tscn" id="1_ibkli"]
-[ext_resource type="PackedScene" uid="uid://boxjyybrrtm03" path="res://scenes/PauseMenu.tscn" id="2_qbsmt"]
+[ext_resource type="PackedScene" uid="uid://bv5vjsyntkegu" path="res://scenes/game/GameUI.tscn" id="1_ibkli"]
+[ext_resource type="PackedScene" uid="uid://6ec6w5ywn3nd" path="res://scenes/menu/PauseMenu.tscn" id="2_qbsmt"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_ve7bo"]
 

@@ -32,7 +32,7 @@ public partial class PauseMenu : Control {
     }
 
     private void OnMainMenuButtonPressed() {
-        this.GetTree().ChangeSceneToFile("res://scenes/MainMenu.tscn");
+        this.GetTree().ChangeSceneToFile("res://scenes/menu/MainMenu.tscn");
     }
 
     private void OnQuitButtonPressed() {

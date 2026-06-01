@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://boxjyybrrtm03"]
+[gd_scene format=3 uid="uid://6ec6w5ywn3nd"]
 
 [ext_resource type="Script" uid="uid://bdx38yi8n4qn0" path="res://scripts/PauseMenu.cs" id="1_jkspe"]
 [ext_resource type="Theme" uid="uid://6s7ipeswg4gd" path="res://themes/MainTheme.tres" id="2_1twlr"]
@@ -17,7 +17,6 @@ script = ExtResource("1_jkspe")
 _pauseMenu = NodePath("PauseMenuPanel")
 
 [node name="PauseMenuPanel" type="Panel" parent="." unique_id=1401421496]
-visible = false
 custom_minimum_size = Vector2(384, 512)
 layout_mode = 1
 anchors_preset = 8
@@ -65,5 +64,14 @@ layout_mode = 2
 theme = ExtResource("2_1twlr")
 text = "Main Menu"
 
+[node name="Spacer2" type="Control" parent="PauseMenuPanel/VBoxContainer" unique_id=1001653995]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="PauseMenuPanel/VBoxContainer" unique_id=1258754892]
+layout_mode = 2
+text = "Quit"
+
 [connection signal="pressed" from="PauseMenuPanel/VBoxContainer/ResumeButton" to="." method="OnResumeButtonPressed"]
 [connection signal="pressed" from="PauseMenuPanel/VBoxContainer/MainMenuButton" to="." method="OnMainMenuButtonPressed"]
+[connection signal="pressed" from="PauseMenuPanel/VBoxContainer/Button" to="." method="OnQuitButtonPressed"]

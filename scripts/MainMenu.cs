@@ -4,8 +4,12 @@ namespace PlanetIdle.scripts;
 
 public partial class MainMenu : Control {
 
-    public void OnPlayButtonPressed() {
+    private void OnPlayButtonPressed() {
         this.GetTree().ChangeSceneToFile("res://scenes/Game.tscn");
+    }
+
+    private void OnQuitButtonPressed() {
+        this.GetTree().Quit();
     }
 
 }

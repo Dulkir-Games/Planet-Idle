@@ -2,6 +2,7 @@ using Godot;
 
 namespace PlanetIdle.scripts;
 
+// ReSharper disable once InconsistentNaming
 public partial class GameUI : Control {
 
     // Called when the node enters the scene tree for the first time.

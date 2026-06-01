@@ -1,10 +1,9 @@
+using Godot;
+using PlanetIdle.core;
+using System;
 using static Godot.DisplayServer;
 
 namespace PlanetIdle.scripts;
-
-using System;
-using core;
-using Godot;
 
 public partial class ToggleFullscreen : Node {
 

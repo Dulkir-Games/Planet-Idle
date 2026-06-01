@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://5joqk5g0h5cx"]
+[gd_scene format=3 uid="uid://bv5vjsyntkegu"]
 
 [ext_resource type="Script" uid="uid://bxhk57gng1l8s" path="res://scripts/GameUI.cs" id="1_jkspe"]
 
@@ -45,24 +45,22 @@ size_flags_horizontal = 3
 [node name="Panel2" type="Panel" parent="HBoxContainer/Right" unique_id=27854832]
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -192.0
-offset_right = 192.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -384.0
 offset_bottom = 384.0
-grow_horizontal = 2
+grow_horizontal = 0
 
 [node name="Panel3" type="Panel" parent="HBoxContainer/Right" unique_id=1181002638]
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -192.0
+offset_left = -384.0
 offset_top = -384.0
-offset_right = 192.0
-grow_horizontal = 2
+grow_horizontal = 0
 grow_vertical = 0

@@ -1,6 +1,6 @@
-namespace PlanetIdle.core;
-
 using Godot;
+
+namespace PlanetIdle.core;
 
 public static class PiLogger {
 

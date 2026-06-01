@@ -1,7 +1,7 @@
-namespace PlanetIdle.scripts;
-
-using core;
 using Godot;
+using PlanetIdle.core;
+
+namespace PlanetIdle.scripts;
 
 public partial class PauseMenu : Control {
 
@@ -9,11 +9,13 @@ public partial class PauseMenu : Control {
 
     public override void _Ready() {
         base._Ready();
-        if (this._pauseMenu == null) {
+        Control pm = this._pauseMenu;
+        if (pm is null) {
             PiLogger.Error("PauseMenu not assigned in editor!");
+            return;
         }
 
-        this._pauseMenu.Hide();
+        pm.Hide();
     }
 
     public override void _Input(InputEvent @event) {
@@ -25,12 +27,16 @@ public partial class PauseMenu : Control {
         this._pauseMenu.Visible = !this._pauseMenu.Visible;
     }
 
-    public void OnResumeButtonPressed() {
+    private void OnResumeButtonPressed() {
         this._pauseMenu.Hide();
     }
 
-    public void OnMainMenuButtonPressed() {
+    private void OnMainMenuButtonPressed() {
         this.GetTree().ChangeSceneToFile("res://scenes/MainMenu.tscn");
+    }
+
+    private void OnQuitButtonPressed() {
+        this.GetTree().Quit();
     }
 
 }

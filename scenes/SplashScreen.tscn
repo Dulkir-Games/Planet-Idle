@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cgif2bppjjgy1"]
 
 [ext_resource type="Texture2D" uid="uid://cqkctl8eeru51" path="res://assets/dulkirlogo.png" id="1_l2g8s"]
+[ext_resource type="Script" uid="uid://ce8hx0ynrpj7u" path="res://scripts/SplashScreen.cs" id="1_m7gka"]
 [ext_resource type="FontFile" uid="uid://b34h5t0mbr0wu" path="res://assets/Miracode.ttf" id="2_rc2kg"]
+[ext_resource type="PackedScene" uid="uid://di6jysadd0wiy" path="res://scenes/MainMenu.tscn" id="3_rc2kg"]
 
 [sub_resource type="Gradient" id="Gradient_l2g8s"]
 offsets = PackedFloat32Array(0, 0.9651347)
@@ -15,6 +17,43 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 metadata/_snap_enabled = true
 
+[sub_resource type="Animation" id="Animation_m7gka"]
+resource_name = "MenuFadeIn"
+length = 2.5333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainMenu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.0333333, 2.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_s8jxw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainMenu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l3ux5"]
+_data = {
+&"MenuFadeIn": SubResource("Animation_m7gka"),
+&"RESET": SubResource("Animation_s8jxw")
+}
+
 [node name="DulkirGamesPresents" type="Control" unique_id=726422837]
 layout_mode = 3
 anchors_preset = 15
@@ -22,6 +61,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_m7gka")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1166455073]
 layout_mode = 1
@@ -77,3 +117,9 @@ theme_override_font_sizes/normal_font_size = 48
 text = "Dulkir Games Presents"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MainMenu" parent="." unique_id=1770861018 instance=ExtResource("3_rc2kg")]
+layout_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1053947227]
+libraries/ = SubResource("AnimationLibrary_l3ux5")

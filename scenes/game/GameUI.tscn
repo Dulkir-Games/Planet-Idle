@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bv5vjsyntkegu"]
 
 [ext_resource type="Script" uid="uid://bxhk57gng1l8s" path="res://scripts/GameUI.cs" id="1_jkspe"]
+[ext_resource type="PackedScene" uid="uid://codrtbxvoankw" path="res://scenes/prefabs/ExternalMass.tscn" id="2_8ms5t"]
+[ext_resource type="Theme" uid="uid://6s7ipeswg4gd" path="res://themes/MainTheme.tres" id="2_t5mpo"]
 
 [node name="GameUI" type="Control" unique_id=2075242356]
 layout_mode = 3
@@ -10,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jkspe")
+_externalMassScene = ExtResource("2_8ms5t")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=62914232]
 layout_mode = 1
@@ -33,6 +36,23 @@ offset_top = -20.0
 offset_right = 40.0
 offset_bottom = 20.0
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Left/Panel" unique_id=814814626]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spawn Mass" type="Button" parent="HBoxContainer/Left/Panel/VBoxContainer" unique_id=225402065]
+layout_mode = 2
+theme = ExtResource("2_t5mpo")
+text = "Spawn Mass"
 
 [node name="Center" type="Control" parent="HBoxContainer" unique_id=881786109]
 layout_mode = 2
@@ -64,3 +84,5 @@ offset_left = -384.0
 offset_top = -384.0
 grow_horizontal = 0
 grow_vertical = 0
+
+[connection signal="pressed" from="HBoxContainer/Left/Panel/VBoxContainer/Spawn Mass" to="." method="OnSpawnMassPressed"]

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://codrtbxvoankw"]
+
+[ext_resource type="Script" uid="uid://r4e3aepwmsi1" path="res://scripts/ExternalMass.cs" id="1_bjtpa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rs0av"]
+albedo_color = Color(1, 0.19215687, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_bjtpa"]
+material = SubResource("StandardMaterial3D_rs0av")
+
+[node name="ExternalMass" type="Node3D" unique_id=1309988776 node_paths=PackedStringArray("_meshInstance3D")]
+script = ExtResource("1_bjtpa")
+_meshInstance3D = NodePath("MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=73858248]
+mesh = SubResource("SphereMesh_bjtpa")
